@@ -1,37 +1,71 @@
-## Welcome to GitHub Pages123
+## Сергей Перетятько
 
-You can use the [editor on GitHub](https://github.com/serssp/peretyatko.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+https://t.me/serssp
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Обо мне
+Программирование для меня не сколько работа, сколько вся жизнь.
 
-### Markdown
+Мне нравится:
+* Видеть результат своего труда. Видеть как мои изменения влияют на пользователей моего продукта. 
+* Получать обратную связь от пользователей (в том числе и реакцию на мои баги).
+* Работать в команде. Постоянно учиться, приобретать новые знания и навыки. Помогать другим.
+* Задачи с нечетко поставленными требованиями, где есть элементы исследования, творчества.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Мне не нравится:
+* Работа ради работы.
+* Что либо, не имеющее цели или предназначения.
+* Сферические кони в вакууме.
 
-```markdown
-Syntax highlighted code block
+Мое [выступление](https://www.youtube.com/watch?v=oHovObF8l_s) на митапе Findmykids
 
-# Header 1
-## Header 2
-### Header 3
+Статья на [medium](https://medium.com/miro-engineering/profiling-in-production-to-detect-server-bottlenecks-321919d2da51) "Profiling in production to detect server bottlenecks"
 
-- Bulleted
-- List
+P.S. c Java c 1999 года
 
-1. Numbered
-2. List
+## Опыт работы
 
-**Bold** and _Italic_ and `Code` text
+### [Miro](www.miro.com)
+The online collaborative whiteboarding platform
+Software engineer
 
-[Link](url) and ![Image](src)
-```
+Февраль 2019 — По настоящее время (3 года и 4 месяца)
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+Основные достижения:
 
-### Jekyll Themes
+* Увеличению капасити сервиса с 25к до ~200к пользователей в пике. С началом пандемии нагрузка на сервис Miro возросла в 8-10 раз в течении нескольких недель. Наша команда была отвественна за локализацию узких мест, выработку и имплементацию решений, направленых на увеличение capacity сервиса. В особенности, это касалось подсистемы работы c Redis. В результате работы сервис Миро справился с возразшей нагрузкой.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/serssp/peretyatko.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+* Увеличение капасити до 1кк. Вторым этапом было проведение различных perfomance тестов с целью выявления узкий мест при нагрузках существенно выше текущих. Выработка решений по устранению и их имлементация.
 
-### Support or Contact
+* Организация системного контроля для предотвращения деградации. Были разработаны дашборды, сравниваниющие текущую производительноть с той, что была неделю назад. По некоторым подсистемам были сделаны прогнозирующие дашборды. При отклонении показателей формировались алерты в релевантные команды. 
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+* Адаптация монолита для работы с AWS ElastiCache. Замена собственной релизации драйвера Redis (с использование NIO) на third-party с поддержкой внутреннего компонентного фреймворка. Это позволило поддержать AWS ElactiCache, проведить решардирование  и maintance без остановки сервиса 
+
+* Миграция данных между различными Redis на горячую с целью увеличения капасити сервиса. Miro использует Redis для хранения персистентных данных. Задача была скопировать все данные в из stanalone сервиса в Redis Cluster либо ElastiCache без остановки сервиса. Было выполнено несколько таких миграций. 
+
+* Повышение производительности транспортной подсистемы и разлочивание новых возможностей для коллаборации на досках. Для решения этого была использована библиотека netty в качестве транспортной системы для WebSocket соединения. В рамках этой задачи была переработана внутренняя модель многопоточности. В результате этой задачи, ускорился вход пользователей на доску
+
+* Разработка im-memory database для виджетов. (в работе)
+
+### [Alternativa Games](https://alternativa.games/)
+Разработчик многопользовательских онлайн-игры
+
+Software engineer (fullstack)
+
+Июнь 2011 — Февраль 2019 (7 лет и 9 месяцев)
+
+[TankiX](https://tankix.com/)
+
+* Дизайн Entity Component System. В TankiOnline использовалась внутренний компонентный фреймворк на сервере, на клиенте для боевки использоваться Ash entity framework. Была задача совместить лучше что было в них, а также облегчить интеграцию с Unity.
+* Дизайн и разработка игрового сервера для многопользовательской игры. В результате через год разработки состоялся первый открытый тест.
+* Разработка игровых фичей.
+
+[Tankionline](https://tankionline.com)
+
+* Оптимизация производительности сервера. В результате игровой кластер имел более 150к игроков в онлайне.
+* Работы направленные на убирание лагов и фризов в игре на серверной стороне.
+* Разработка античитов.
+* Разработка игровых фичей.
+* Написание конвертора клиентского кода с AS3 на Kotlin.
+* Сопровождение ETL для аналитики.
+
+Java • C# • Unity3d • Flash-программирование • Apache Kafka • Apache Hadoop
